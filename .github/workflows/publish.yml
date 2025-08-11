@@ -15,7 +15,7 @@ jobs:
     outputs:
       upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v4.3.0
 
       - name: Extract tag
         run: echo "release_tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
@@ -39,7 +39,7 @@ jobs:
         python-version: ['3.8', '3.9', '3.10', '3.11']
         cuda-version: ['11.8', '12.1']
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v4.3.0
 
       - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
